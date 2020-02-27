@@ -1,1 +1,1 @@
-# actionable-email-classification
+# Actionable-email-classification
