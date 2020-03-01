@@ -45,7 +45,7 @@ label 1: actionable  , label 0: non actionable
 ## 1.3 challenges
 - Data extraction was a challenge as before observing that content can be extracted just by spliting on '\n\n'. i was writing some complex regex.
 - To get the sentences just spliting on '.'(dot), wouldnt work as it would split sentences that use dot for other purposes, used NLTK model to get sentences.
-- Though data is quite big 6627375 sentences. i do have sufficient RAM but the time it would iterate all the sentences would be too high. hence classifying only 500,000
+- Though data is quite big 6627375 sentences. i do have sufficient RAM but the time it would iterate all the sentences would be too high. hence classifying only 50,000
 - Going though sentences to get the actionable phrases for token matching was not straight forward. few sentences felt ambiguous.
 - finding those patterns in pos tagging was difficult. Had to go through some online resources. i have listed them in the jupyter notebooks
 
