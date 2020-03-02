@@ -22,7 +22,7 @@ I am using jupyter notebooks as my ide.
 > **File Pre_processing1.ipynb:** 
 Loads the raw email data,preprocesses it and extracts sentences. Extracted sentences are saved in the *sentence_file.csv*
 
-> **File Model_ML.ipynb:**
+> **File Model_rule_based.ipynb:**
 Using token matching and regular expression on pos tags to detect actionable item patterns. classification labels are saved in file "rule_gen_label.csv" 
 label 1: actionable  , label 0: non actionable
 
@@ -51,3 +51,14 @@ label 1: actionable  , label 0: non actionable
 
 
 # 2. ML Model
+
+## 1.1 setup env
+The requirement for setting up the environment is present in requirements2.txt
+I have used word2vec model for vectorization <br> download the GoogleNews-vectors-negative300.bin model from https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz . <br>
+I am using jupyter notebooks as my ide.
+
+> dataset: actions.csv: contains only action class
+> **File Model_ML.ipynb:**
+
+
+
