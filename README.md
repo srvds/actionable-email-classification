@@ -51,14 +51,67 @@ label 1: actionable  , label 0: non actionable
 
 
 # 2. ML Model
+> a) At first i have done one class classification/anamoly detection using Encoder and also one class classification SVM.
+> b) Binary classification using BERT. 
 
-## 1.1 setup env
+## ML Part a
+
+## a.1 setup env for part 'a'
 The requirement for setting up the environment is present in requirements2.txt
-I have used word2vec model for vectorization <br> download the GoogleNews-vectors-negative300.bin model from https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz . <br>
-I am using jupyter notebooks as my ide.
 
-> dataset: actions.csv: contains only action class
-> **File Model_ML.ipynb:**
+> dataset: actions.csv: contains only action class and not non action class, using only one class done anamoly detection
+> **File  Model_ML.ipynb:**
+
+## ML Part b
+
+## b.1 setup env for part 'b'
+The requirement for setting up the environment is present in requirements3.txt
+
+> dataset: created_data.csv: contains all the actions.csv class 1 tagged data plus randomly sampled class 0 data from the rule based approach
+> **File creating_data.csv**
+> **File Model_DL.ipynb**
+
+> At least 12 GB of RAM and a GPU with more than 8 gb of memory will be required
+> Run it on linux machine.
+> The code in Model_DL.ipynb is not compatiple to be run on a windows system as the torch tensors are automatically set to 32 bit while using windows machine. 
+> The code expects 64 bit torch tensors
+> i will suggest a cloud machine or google colab to run it. 
 
 
+## b.2 pipeline
+- generate data file created_data.csv by running creating_data.ipynb
+- Loading the csv data using pandas
+- using BERT english uncased for feature extraction. 
+- BERT is a method of pretraining language models.
+- I will use BERT to extract high quality language features.
+- I will use pre trained BERT model but will fine tune it on our data.
+- Pre trained BERT model has a lot of information already encoded in its weights.
+- I will lightly tune them to use the features for classification.
 
+- In the past, I have Pretrained BERT on Hindi language from scratch.
+- But for english so much work has already been done.I can never match the amount and quality of data, and the resources used by big research labs to pre train BERT.
+- I will use a pre BERT trained Model, tune it on my data and extract features by transfer learning. 
+- BERT is bidirectional it learns both left and right context.
+
+### b.3 data preprocessing
+- Apart from the other preprocessing
+- BERT expects the inputs to be in certain format:
+  - Add special tokens to the start and end of each sentence.
+  - Pad & truncate all sentences to a single constant length(512)
+  - Explicitly differentiate real tokens from padding tokens with the "attention mask".
+
+- The trained model is saved in Model_Save folder
+
+## b.4 challenges
+
+- setting up required package for BERT,as Bert is originally written in python 2 and tensorflow 1
+- Converting the data to the BERT input format.
+- The memory usage of BERT is Very high even with batch size as small as 32.
+- I didn't know at 1st that the torch.tensors are by default 32 bits floating point in windows machine.
+- Got GPU memory error (8gb Vram) even with a batch size of 32, had to reduce it to 16.
+
+## b.5 performance
+
+- Recall,f1-score, and precision is almost maximum on trainning data.
+- I have included the code to test performance on any dataset, by just changing the test file
+- set TEST_FILE variable to the file name.
