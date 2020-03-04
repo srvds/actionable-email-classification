@@ -51,14 +51,37 @@ label 1: actionable  , label 0: non actionable
 
 
 # 2. ML Model
+> a) At first i have done one class classification/anamoly detection using Encoder and also one class classification SVM.
+> b) Binary classification using BERT. 
 
-## 1.1 setup env
+## ML Part a
+
+## a.1 setup env for part 'a'
 The requirement for setting up the environment is present in requirements2.txt
-I have used word2vec model for vectorization <br> download the GoogleNews-vectors-negative300.bin model from https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz . <br>
-I am using jupyter notebooks as my ide.
 
-> dataset: actions.csv: contains only action class
-> **File Model_ML.ipynb:**
+> dataset: actions.csv: contains only action class and not non action class, using only one class done anamoly detection
+> **File  Model_ML.ipynb:**
+
+## ML Part b
+
+## b.1 setup env for part 'b'
+The requirement for setting up the environment is present in requirements3.txt
+
+> dataset: created_data.csv: contains all the actions.csv class 1 tagged data plus randomly sampled class 0 data from the rule based approach
+> **File creating_data.csv**
+> **File Model_DL.ipynb**
+
+> At least 12 GB of RAM and a GPU with more than 8 gb of memory will be required
+> Run it on linux machine.
+> The code in Model_DL.ipynb is not compatiple to be run on a windows system as the torch tensors are automatically set to 32 bit while using windows machine. 
+> The code expects 64 bit torch tensors
+> i will suggest a cloud machine or google colab to run it. 
 
 
+## b.2 pipeline
+
+- Loading the csv data using pandas
+- using BERT english uncased for feature extraction. 
+- The jupyter notebook has a detailed explanation of feature extraction using BERT
+- 
 
