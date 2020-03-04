@@ -60,7 +60,7 @@ label 1: actionable  , label 0: non actionable
 The requirement for setting up the environment is present in requirements2.txt
 
 > dataset: actions.csv: contains only action class and not non action class, using only one class done anamoly detection
-> **File  Model_ML.ipynb:**
+> **File  Model_ anomaly_detection.ipynb:**
 
 ## ML Part b
 
@@ -69,6 +69,7 @@ The requirement for setting up the environment is present in requirements3.txt
 
 > dataset: created_data.csv: contains all the actions.csv class 1 tagged data plus randomly sampled class 0 data from the rule based approach
 > **File creating_data.csv**
+
 > **File Model_DL.ipynb**
 
 > At least 12 GB of RAM and a GPU with more than 8 gb of memory will be required
