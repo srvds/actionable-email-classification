@@ -16,8 +16,8 @@ Due to large size i have not uploaded the datafile to github.
 
 ## 1.1 setup env
 The requirement for setting up the environment is present in 
-> windows: requirements1.txt
-> Linux: req1_lin.txt
+> for windows use: requirements1.txt
+> for Linux use: req1_lin.txt
 After installation of spacy. download the "en_core_web_sm" model.<br> https://spacy.io/usage. <br>
 I am using jupyter notebooks as my ide.
 
@@ -59,7 +59,8 @@ label 1: actionable  , label 0: non actionable
 ## ML Part a
 
 ## a.1 setup env for part 'a'
-The requirement for setting up the environment is present in requirements2.txt
+The requirement for setting up the environment is present in 
+> for windows use:requirements2.txt
 
 > dataset: actions.csv: contains only action class and not non action class, using only one class done anamoly detection
 > **File  Model_ anomaly_detection.ipynb:**
@@ -67,7 +68,9 @@ The requirement for setting up the environment is present in requirements2.txt
 ## ML Part b
 
 ## b.1 setup env for part 'b'
-The requirement for setting up the environment is present in requirements3.txt
+The requirement for setting up the environment is present in 
+> for windows use: requirements3.txt
+> for linux use: req3_lin.txt
 
 > dataset: created_data.csv: contains all the actions.csv class 1 tagged data plus randomly sampled class 0 data from the rule based approach
 > **File creating_data.csv**
