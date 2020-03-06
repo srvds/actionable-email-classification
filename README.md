@@ -17,9 +17,8 @@ Due to large size i have not uploaded the datafile to github.
 ## 1.1 setup env
 The requirement for setting up the environment is present in 
 <br>
-> for windows use: requirements1.txt
-<br>
-> for Linux use: req1_lin.txt
+>for windows use: requirements1.txt<br>
+>for Linux use: req1_lin.txt
 <br>
 After installation of spacy. download the "en_core_web_sm" model.<br> https://spacy.io/usage. <br>
 I am using jupyter notebooks as my ide.
@@ -27,7 +26,7 @@ I am using jupyter notebooks as my ide.
 > **File Pre_processing1.ipynb:** 
 Loads the raw email data,preprocesses it and extracts sentences. Extracted sentences are saved in the *sentence_file.csv*
 
-> **File Model_rule_based.ipynb:**
+>**File Model_rule_based.ipynb:**
 Using token matching and regular expression on pos tags to detect actionable item patterns. classification labels are saved in file "rule_gen_label.csv" 
 label 1: actionable  , label 0: non actionable
 
@@ -56,30 +55,40 @@ label 1: actionable  , label 0: non actionable
 
 
 # 2. ML Model
-> a) At first i have done one class classification/anamoly detection using Encoder and also one class classification SVM.
-> b) Binary classification using BERT. 
+> a) At first i have done one class classification/anamoly detection using Encoder and also one class classification SVM.<br>
+>b) Binary classification using BERT. 
 
 ## ML Part a
 
 ## a.1 setup env for part 'a'
 The requirement for setting up the environment is present in <br>
-> for windows use:requirements2.txt
+
+>for windows use:requirements2.txt
+
 <br>
-> dataset: actions.csv: contains only action class and not non action class, using only one class done anamoly detection
+
+>dataset: actions.csv: contains only action class and not non action class, using only one class done anamoly detection
 <br>
-> **File  Model_ anomaly_detection.ipynb:**
+
+>**File  Model_ anomaly_detection.ipynb:**
 
 ## ML Part b
 
 ## b.1 setup env for part 'b'
 The requirement for setting up the environment is present in 
-> for windows use: requirements3.txt
-> for linux use: req3_lin.txt
+<br>
 
-> dataset: created_data.csv: contains all the actions.csv class 1 tagged data plus randomly sampled class 0 data from the rule based approach
-> **File creating_data.csv**
+>for windows use: requirements3.txt<br>
 
-> **File Model_DL.ipynb**
+>for linux use: req3_lin.txt
+
+>dataset: created_data.csv: contains all the actions.csv class 1 tagged data plus randomly sampled class 0 data from the rule based approach
+<br>
+
+>**File creating_data.csv**
+<br>
+
+>**File Model_DL.ipynb**
 
 > At least 12 GB of RAM and a GPU with more than 8 gb of memory will be required
 > Run it on linux machine.
