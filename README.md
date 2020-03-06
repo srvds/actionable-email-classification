@@ -15,7 +15,9 @@ Due to large size i have not uploaded the datafile to github.
 # 1. Rule based approach
 
 ## 1.1 setup env
-The requirement for setting up the environment is present in requirements1.txt
+The requirement for setting up the environment is present in 
+> windows: requirements1.txt
+> Linux: req1_lin.txt
 After installation of spacy. download the "en_core_web_sm" model.<br> https://spacy.io/usage. <br>
 I am using jupyter notebooks as my ide.
 
